@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/y0s3ph/kubeshield/actions/workflows/ci.yml/badge.svg)](https://github.com/y0s3ph/kubeshield/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 **AI-powered Kubernetes manifest security scanner.**
@@ -188,4 +188,4 @@ kubeshield/
 
 ## License
 
-MIT
+Apache License 2.0 — see [LICENSE](LICENSE) for details.
