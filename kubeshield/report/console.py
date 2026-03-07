@@ -101,10 +101,8 @@ class ConsoleReporter:
         else:
             color = "red"
 
-        status = "[bold green]PASSED[/bold green]" if result.passed else "[bold red]FAILED[/bold red]"
-
         score_display = Text()
-        score_display.append(f"  Security Score: ", style="bold")
+        score_display.append("  Security Score: ", style="bold")
         score_display.append(f"{score}/100", style=f"bold {color}")
         score_display.append("  |  Status: ")
 

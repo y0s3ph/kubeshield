@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from enum import Enum
-from pathlib import Path
+from enum import StrEnum
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
-class Severity(str, Enum):
+class Severity(StrEnum):
     CRITICAL = "CRITICAL"
     HIGH = "HIGH"
     MEDIUM = "MEDIUM"
@@ -45,7 +48,7 @@ class Severity(str, Enum):
         }[self]
 
 
-class Category(str, Enum):
+class Category(StrEnum):
     SECURITY = "Security"
     RELIABILITY = "Reliability"
     NETWORKING = "Networking"

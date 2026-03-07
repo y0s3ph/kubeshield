@@ -51,7 +51,9 @@ class MissingResourceRequests(Rule):
         "placement decisions and QoS guarantees are weakened.",
         severity=Severity.MEDIUM,
         category=Category.RESOURCES,
-        remediation="Set `resources.requests.cpu` and `resources.requests.memory` for each container.",
+        remediation=(
+            "Set `resources.requests.cpu` and `resources.requests.memory` for each container."
+        ),
     )
 
     def check(self, resource: Resource) -> list[Finding]:

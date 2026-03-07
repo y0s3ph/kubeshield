@@ -3,18 +3,23 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
-from pathlib import Path
+from datetime import UTC, datetime
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 from kubeshield import __version__
-from kubeshield.models import ScanResult
+
+if TYPE_CHECKING:
+    from kubeshield.models import ScanResult
 
 
 class JSONReporter:
     def generate(self, result: ScanResult) -> str:
         report = {
             "kubeshield_version": __version__,
-            "scan_timestamp": datetime.now(tz=timezone.utc).isoformat(),
+            "scan_timestamp": datetime.now(tz=UTC).isoformat(),
             "summary": {
                 "files_scanned": result.files_scanned,
                 "resources_scanned": result.resources_scanned,

@@ -132,7 +132,9 @@ def list_rules() -> None:
             f"{sev.icon} {sev.value}",
             rule_cls.meta.category.value,
             rule_cls.meta.name,
-            rule_cls.meta.description[:80] + "..." if len(rule_cls.meta.description) > 80 else rule_cls.meta.description,
+            rule_cls.meta.description[:80] + "..."
+            if len(rule_cls.meta.description) > 80
+            else rule_cls.meta.description,
         )
 
     console.print(table)

@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import ClassVar
+from typing import TYPE_CHECKING, ClassVar
 
-from kubeshield.models import Finding, Resource, RuleMetadata
+if TYPE_CHECKING:
+    from kubeshield.models import Finding, Resource, RuleMetadata
 
 registry: list[type[Rule]] = []
 
@@ -30,8 +31,7 @@ class Rule(ABC):
             registry.append(cls)
 
     @abstractmethod
-    def check(self, resource: Resource) -> list[Finding]:
-        ...
+    def check(self, resource: Resource) -> list[Finding]: ...
 
     def applies_to(self, resource: Resource) -> bool:
         return resource.kind in self.workload_kinds

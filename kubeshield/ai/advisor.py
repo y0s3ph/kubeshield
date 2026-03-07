@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import os
+from typing import TYPE_CHECKING
 
 from openai import OpenAI
 
-from kubeshield.models import Finding, ScanResult
+if TYPE_CHECKING:
+    from kubeshield.models import Finding, ScanResult
 
 SYSTEM_PROMPT = """\
 You are a Kubernetes security expert. Given a list of security findings \
