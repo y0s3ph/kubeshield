@@ -1,6 +1,6 @@
 """Tests for data models."""
 
-from kubeshield.models import Finding, RuleMetadata, ScanResult, Severity, Category
+from kubeshield.models import Category, Finding, RuleMetadata, ScanResult, Severity
 
 
 class TestSeverity:

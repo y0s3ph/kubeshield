@@ -1,6 +1,13 @@
 """Tests for security rules."""
 
 from kubeshield.models import Resource
+from kubeshield.rules.networking import DefaultNamespace, HostPort
+from kubeshield.rules.reliability import (
+    MissingLivenessProbe,
+    MissingReadinessProbe,
+    SingleReplica,
+)
+from kubeshield.rules.resources import MissingResourceLimits, MissingResourceRequests
 from kubeshield.rules.security import (
     AllowPrivilegeEscalation,
     CapabilitiesNotDropped,
@@ -12,13 +19,6 @@ from kubeshield.rules.security import (
     SeccompProfile,
     ServiceAccountToken,
 )
-from kubeshield.rules.reliability import (
-    MissingLivenessProbe,
-    MissingReadinessProbe,
-    SingleReplica,
-)
-from kubeshield.rules.resources import MissingResourceLimits, MissingResourceRequests
-from kubeshield.rules.networking import DefaultNamespace, HostPort
 
 
 def _make_resource(raw: dict) -> Resource:
